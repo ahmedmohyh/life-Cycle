@@ -1,10 +1,9 @@
 <p>parent works!</p>
-<app-child *ngIf ="mytitle" [title]="mytitle" #child>
-  <h1 class="ha_1">
-    Hello from parent
-  </h1>
-  <p id="pe_1">test p</p>
+<hr>
+<ng-container *ngFor="let child of [1,2,3,4,5], let i = index">
+<app-child *ngIf ="mytitle" [title]="mytitle + '' +i" #child>
 </app-child>
+</ng-container>
 <br/>
 <button (click)="mytitle= 'title2'">change title</button>
 

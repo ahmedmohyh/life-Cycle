@@ -1,5 +1,5 @@
 import { ChildComponent } from './../child/child.component';
-import { Component, DoCheck, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, ElementRef, OnChanges, OnInit, QueryList, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
 import {ViewEncapsulation} from '@angular/core';
 
 @Component({
@@ -8,20 +8,21 @@ import {ViewEncapsulation} from '@angular/core';
   styleUrls: ['./parent.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class ParentComponent implements OnChanges , OnInit, DoCheck {
-  mytitle  = 'title1';
+export class ParentComponent implements AfterViewInit  {
+  mytitle  = 'title';
   @ViewChild(ChildComponent) mychild!: ChildComponent;
+  @ViewChildren(ChildComponent) childs!:QueryList<ChildComponent>;
   constructor() {
    // console.log('the parent constructor has been called');
 
 /*     setTimeout(() => {
       this.mytitle = '';
     }, 3000); */
-    console.log('in constructor', this.mychild);
+    //console.log('in constructor', this.mychild);
 
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+/*   ngOnChanges(changes: SimpleChanges): void {
     //console.log('changes are ', changes);
     console.log('in ngOnChanges', changes,this.mychild);
   }
@@ -48,14 +49,16 @@ export class ParentComponent implements OnChanges , OnInit, DoCheck {
     //  console.log('ng after content checked');
     console.log('in ngAfterContentChecked', this.mychild);
 
-  }
+  } */
   ngAfterViewInit(): void {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
     //console.log('ng after view init.');
-    console.log('in ngAfterViewInit', this.mychild);
+    //console.log('in ngAfterViewInit', this.mychild);
+    console.log('after view init', this.childs.toArray());
 
   }
+/*   }
   ngAfterViewChecked(): void {
     //Called after every check of the component's view. Applies to components only.
     //Add 'implements AfterViewChecked' to the class.
@@ -67,6 +70,9 @@ export class ParentComponent implements OnChanges , OnInit, DoCheck {
     //Add 'implements OnDestroy' to the class.
    // console.log('component destroyed.');
    console.log('in ngOnDestroy', this.mychild);
-  }
+  } */
+
+
 
 }
+
