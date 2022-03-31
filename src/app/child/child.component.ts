@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
-export class ChildComponent implements OnInit {
-
+export class ChildComponent implements OnChanges , OnInit {
+@Input() title: string = '';
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('changes is', changes);
   }
+  ngOnInit(): void {
+    console.log('the child has been initilised');
 
+  }
 }
