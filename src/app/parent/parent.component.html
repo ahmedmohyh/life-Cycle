@@ -1,5 +1,10 @@
 <p>parent works!</p>
-<app-child [title] ="mytitle"></app-child>
+<app-child *ngIf ="mytitle" [title]="mytitle">
+  <h1 class="ha_1">
+    Hello from parent
+  </h1>
+  <p id="pe_1">test p</p>
+</app-child>
 <br/>
 <button (click)="mytitle= 'title2'">change title</button>
 
