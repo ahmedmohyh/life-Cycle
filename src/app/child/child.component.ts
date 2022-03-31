@@ -6,6 +6,9 @@ import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@an
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnChanges , OnInit, DoCheck {
+  nativeElement(arg0: string, nativeElement: any) {
+    throw new Error('Method not implemented.');
+  }
 //@Input() title: string = '';
 @Input() set title(name:string){
   console.log(name);
@@ -36,7 +39,7 @@ mytitle:string = '';
   ngAfterContentChecked(): void {
     //Called after every check of the component's or directive's content.
     //Add 'implements AfterContentChecked' to the class.
-  //  console.log('ng after content checked');
+    //  console.log('ng after content checked');
 
   }
   ngAfterViewInit(): void {
@@ -54,7 +57,7 @@ mytitle:string = '';
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
-    console.log('component destroyed.');
+   // console.log('component destroyed.');
 
   }
 }
