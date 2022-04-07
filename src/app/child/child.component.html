@@ -1,7 +1,9 @@
 <h1>child works!</h1>
-this is the child: {{childtitle}}
+<ol *ngFor="let ele of list, let i = index">
+*{{ele}}
+</ol>
 <!-- <hr>
- --><ng-content></ng-content>
+ -->
 <!-- <ng-content select=".ha_1"></ng-content>
 
 <ng-content select="#pe_1"></ng-content> -->

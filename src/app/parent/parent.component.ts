@@ -1,6 +1,7 @@
 import { ChildComponent } from './../child/child.component';
 import { AfterViewInit, Component, DoCheck, ElementRef, OnChanges, OnInit, QueryList, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
 import {ViewEncapsulation} from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-parent',
@@ -9,11 +10,24 @@ import {ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class ParentComponent implements AfterViewInit  {
-  mytitle  = 'titleParent';
-  @ViewChild(ChildComponent) mychild!: ChildComponent;
-  @ViewChildren(ChildComponent) childs!:QueryList<ChildComponent>;
+namesParent :BehaviorSubject<string[] | string | any[]> = new BehaviorSubject<string[] | string | any[]>([
+  "x",
+  "y",
+  "z"
+]);
+ah:string = 'ahmed';
+
+addName(name: string){
+  this.namesParent.next(name); //mution //update
+  //this.namesParent = [...this.namesParent,name]; //new reference
+}
+/*   mytitle  = 'titleParent'; */
+/*   @ViewChild(ChildComponent) mychild!: ChildComponent;
+  @ViewChildren(ChildComponent) childs!:QueryList<ChildComponent>; */
+
   constructor() {
    // console.log('the parent constructor has been called');
+   //console.log(`my name is: ${this.ah}`);
 
 /*     setTimeout(() => {
       this.mytitle = '';

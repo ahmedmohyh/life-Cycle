@@ -1,11 +1,14 @@
 <p>parent works!</p>
-<hr>
-<!-- <ng-container *ngFor="let child of [1,2,3,4,5], let i = index">
+<!-- <hr>
+ --><!-- <input type="text" #txtinpput>
+ --><!-- <button (click)="addName(txtinpput.value); txtinpput.value = ''; childref.refresh() " >AddName</button>
+ --><!-- <ng-container *ngFor="let child of [1,2,3,4,5], let i = index">
  -->
- <app-child>
-   <app-subchild #refsub></app-subchild>
- </app-child>
-<!-- </ng-container>
+<!--  <app-child [names]="namesParent" #childref></app-child>
+ --><!-- </ng-container>
  -->
 <!-- <button (click)="mytitle= 'title2'">change title</button>
  -->
+<!-- <p ngNonBindable>{{ah}}</p>
+ -->
+ <p [appHighlight]="'yellow'">{{ah}}</p>
