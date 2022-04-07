@@ -9,7 +9,7 @@ import {ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class ParentComponent implements AfterViewInit  {
-  mytitle  = 'title';
+  mytitle  = 'titleParent';
   @ViewChild(ChildComponent) mychild!: ChildComponent;
   @ViewChildren(ChildComponent) childs!:QueryList<ChildComponent>;
   constructor() {
@@ -55,7 +55,7 @@ export class ParentComponent implements AfterViewInit  {
     //Add 'implements AfterViewInit' to the class.
     //console.log('ng after view init.');
     //console.log('in ngAfterViewInit', this.mychild);
-    console.log('after view init', this.childs.toArray());
+    //console.log('after view init', this.childs.toArray());
 
   }
 /*   }

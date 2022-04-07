@@ -1,4 +1,5 @@
-import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { SubchildComponent } from './../subchild/subchild.component';
+import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewChild, ViewChildren, QueryList, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -12,9 +13,11 @@ export class ChildComponent implements OnChanges , OnInit, DoCheck {
 //@Input() title: string = '';
 @Input() set title(name:string){
   console.log(name);
-this.mytitle = name;
+this.childtitle = name;
 }
-mytitle:string = '';
+@ViewChild('refsub') subChild!: SubchildComponent;
+/* @ViewChildren('ref')subsChilds :QueryList<ElementRef> | undefined;
+ */childtitle:string = '';
   constructor() {
     //console.log('the child constructor has been called');
    }
@@ -34,6 +37,8 @@ mytitle:string = '';
     //Called after ngOnInit when the component's or directive's content has been initialized.
     //Add 'implements AfterContentInit' to the class.
    // console.log('ng after content init.');
+   //console.log(this.subsChilds.length);
+
 
   }
   ngAfterContentChecked(): void {
@@ -46,6 +51,7 @@ mytitle:string = '';
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
     //console.log('ng after view init.');
+    console.log(this.subChild);
 
   }
   ngAfterViewChecked(): void {
