@@ -11,10 +11,15 @@
  -->
 <!-- <p ngNonBindable>{{ah}}</p>
  -->
- <p [appHighlight]="'yellow'">{{ah}}</p> <!-- in this case the selector and the input are the same thing
+<!--  <p [appHighlight]="'yellow'">{{ah}}</p> <!-- in this case the selector and the input are the same thing
   -->
 
- <input type="text">
+<!--  <input type="text">
  <br>
  <br>
- <input type="text" appRandomColors>
+ <input type="text" appRandomColors> -->
+
+<div *ngFor="let name of names; let i = index; let odd=odd; let even = even; let first = first; let cnt = count;">
+{{name}}
+{{i + ' ' + i + ' '+ odd + ' ' + even+ ' '+ even+ ' ' + first + ' ' + cnt }}
+</div>

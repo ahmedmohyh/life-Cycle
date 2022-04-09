@@ -21,6 +21,7 @@ addName(name: string){
   this.namesParent.next(name); //mution //update
   //this.namesParent = [...this.namesParent,name]; //new reference
 }
+public names: string[] = ["a","b","c"];
 /*   mytitle  = 'titleParent'; */
 /*   @ViewChild(ChildComponent) mychild!: ChildComponent;
   @ViewChildren(ChildComponent) childs!:QueryList<ChildComponent>; */
