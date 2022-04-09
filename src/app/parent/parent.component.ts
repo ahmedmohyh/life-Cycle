@@ -15,7 +15,7 @@ namesParent :BehaviorSubject<string[] | string | any[]> = new BehaviorSubject<st
   "y",
   "z"
 ]);
-ah:string = 'ahmed';
+public namey:string ="";
 
 addName(name: string){
   this.namesParent.next(name); //mution //update

@@ -7,6 +7,8 @@ import { ChildComponent } from './child/child.component';
 import { SubchildComponent } from './subchild/subchild.component';
 import { HighlightDirective } from './highlight.directive';
 import { RandomColorsDirective } from './random-colors.directive';
+import { UnlessDirective } from './unless.directive';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,11 @@ import { RandomColorsDirective } from './random-colors.directive';
     ChildComponent,
     SubchildComponent,
     HighlightDirective,
-    RandomColorsDirective
+    RandomColorsDirective,
+    UnlessDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -37,6 +37,11 @@
           }
         }
       }
+    },
+    {
+      "label": "AngularServe",
+      "type": "shell",
+      "command": "ng s -o"
     }
   ]
 }

@@ -19,7 +19,39 @@
  <br>
  <input type="text" appRandomColors> -->
 
+ <ng-template #mynames>
 <div *ngFor="let name of names; let i = index; let odd=odd; let even = even; let first = first; let cnt = count;">
 {{name}}
 {{i + ' ' + i + ' '+ odd + ' ' + even+ ' '+ even+ ' ' + first + ' ' + cnt }}
 </div>
+</ng-template>
+<!-- <hr>
+<input type="text" [(ngModel)]="name">
+
+<div *ngIf="name">ng if</div>
+<div *appUnless="name">ng unless</div> -->
+
+Let's start with  ng- template
+<hr>
+
+<input type="text" [(ngModel)]="namey">
+<br>
+<!-- <div>ng if</div>
+<ng-template #elseBloc>In else block</ng-template> -->
+
+<div *ngIf="namey;then thenBlock;else other_content">
+  content here ...
+</div>
+<ng-template #thenBlock>then the then here...</ng-template>
+<ng-template #other_content>other content here...</ng-template>
+
+<hr>
+<ng-container *ngTemplateOutlet="mynames"></ng-container>
+
+<hr>
+<ng-template #mainButton>
+  <button> I am main button</button>
+</ng-template>
+<app-child [parentTemplate]="mainButton"></app-child>
+<!-- if parent Template is removed the default button
+will be replaced from the child -->

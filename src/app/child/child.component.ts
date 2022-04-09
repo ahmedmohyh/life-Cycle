@@ -1,5 +1,5 @@
 import { SubchildComponent } from './../subchild/subchild.component';
-import { ChangeDetectionStrategy, Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewChild, ViewChildren, QueryList, ElementRef, ContentChild, ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewChild, ViewChildren, QueryList, ElementRef, ContentChild, ChangeDetectorRef, TemplateRef } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -9,9 +9,12 @@ import { BehaviorSubject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
+
 export class ChildComponent implements OnChanges , OnInit, DoCheck {
   @Input() names :BehaviorSubject<string[] | string| any> | undefined;
   list:string[] = [];
+
+  @Input() parentTemplate! :TemplateRef<any>;
 /*   nativeElement(arg0: string, nativeElement: any) {
     throw new Error('Method not implemented.');
   } */
