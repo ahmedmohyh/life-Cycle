@@ -6,6 +6,7 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { SubchildComponent } from './subchild/subchild.component';
 import { HighlightDirective } from './highlight.directive';
+import { RandomColorsDirective } from './random-colors.directive';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { HighlightDirective } from './highlight.directive';
     ParentComponent,
     ChildComponent,
     SubchildComponent,
-    HighlightDirective
+    HighlightDirective,
+    RandomColorsDirective
   ],
   imports: [
     BrowserModule
